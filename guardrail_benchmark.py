@@ -9,9 +9,14 @@ from typing import Dict, List, Any, Optional
 from dotenv import load_dotenv
 from datetime import datetime
 from pathlib import Path
+import matplotlib.pyplot as plt
+import seaborn as sns
 
 # Load environment variables
 load_dotenv()
+
+# Set Seaborn style
+sns.set_theme(style="whitegrid")
 
 class GuardrailBenchmark:
     """
