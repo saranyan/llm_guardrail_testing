@@ -72,7 +72,9 @@ def generate_html_report(run_dir: str):
             
             # Add percentage labels
             for container in ax.containers:
-                labels = [f'{v:.0%}' if v > 0.05 else '' for v in container]
+                # Get the height values from the bars
+                heights = [bar.get_height() for bar in container]
+                labels = [f'{h:.0%}' if h > 0.05 else '' for h in heights]
                 ax.bar_label(container, labels=labels, label_type='center', fontsize=9)
                 
             plt.savefig(os.path.join(vis_dir, 'category_refusal_rates.png'), dpi=300)
