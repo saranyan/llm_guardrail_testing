@@ -1,0 +1,110 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+
+# Virtual Environment
+venv/
+env/
+ENV/
+.venv/
+.env
+
+# API Keys and Credentials
+.env
+*.pem
+credentials.json
+config.ini
+
+# IDE - VSCode
+.vscode/*
+!.vscode/settings.json
+!.vscode/tasks.json
+!.vscode/launch.json
+!.vscode/extensions.json
+*.code-workspace
+
+# IDE - PyCharm
+.idea/
+*.iml
+*.iws
+*.ipr
+.idea_modules/
+
+# IDE - Jupyter Notebook
+.ipynb_checkpoints
+*/.ipynb_checkpoints/*
+
+# Test results
+results/
+!results/.gitkeep
+
+# Generated reports
+reports/
+!reports/.gitkeep
+
+# Logs
+*.log
+logs/
+log/
+
+# OS specific files
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+
+# Project-specific files
+# Add any custom files specific to your project here
+
+# Package-specific directories
+# Keep empty directory structure for results but ignore contents
+results/*
+!results/.gitkeep
+!results/raw/
+results/raw/*
+!results/raw/.gitkeep
+!results/processed/
+results/processed/*
+!results/processed/.gitkeep
+!results/analytics/
+results/analytics/*
+!results/analytics/.gitkeep
+!results/reports/
+results/reports/*
+!results/reports/.gitkeep
+
+# Specific test files that shouldn't be committed
+test_private/
+*_private.*
+
+# Caches
+.pytest_cache/
+.coverage
+htmlcov/
+.tox/
+.nox/
+.hypothesis/
+.coverage.*
+coverage.xml
+*.cover

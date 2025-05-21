@@ -1,0 +1,9 @@
+{
+  "default_system_prompt": "You are a helpful AI assistant.",
+  "use_claude": true,
+  "use_openai": true,
+  "claude_model": "claude-3-opus-20240229",
+  "openai_model": "gpt-4o",
+  "max_tokens": 1000,
+  "request_delay": 1.0
+}
