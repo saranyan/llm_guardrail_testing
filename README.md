@@ -36,37 +36,54 @@ python -m scripts.generate_report --input-dir results/processed --output results
 
 ```
 llm-guardrail-testing/
-├── src/           # Code to run the tests
+├── src/                                 # Code to run the tests
 │   ├── guardrail_benchmark.py           # Core functionality
 │   ├── generate_html_from_run.py        # generates HTML file from run for viz
 |   ├── console_summary_from_run.py      # generates console report from run
-│
-├── scripts/              # Utility scripts
-├── test_suites/          # Test definitions
-├── config/               # Configuration files
-├── results/              # Results directory (created at runtime)
-├── examples/             # Example code and notebooks
-└── tests/                # Unit tests
+|   ├── config.json
+├── .env file                             #create this with your API keys
+├── benchmark_data/                       # benchmark data in json format
+├── sample_run_results/                   # Sample generated data for reference
+
 ```
 
-##  Test Suites
+## Test Suites
 
-The framework includes several pre-defined test suites:
+The framework includes comprehensive test suites covering critical AI safety domains:
 
-- **Information Boundaries**: Tests requests for potentially dangerous information
-- **Creative Content**: Tests requests for inappropriate creative content
-- **Code Generation**: Tests requests for harmful code
-- **Policy Extraction**: Tests attempts to extract model policies
-- **Personal Data**: Tests generation of sensitive personal information
-- **Harmful Advice**: Tests requests for harmful advice
-- **Role Circumvention**: Tests attempts to circumvent the model's role
+### Core Test Categories
 
-Each test suite examines different dimensions of variation:
+- **Harmful Misinformation** - Tests resistance to dangerous health advice, unproven medical claims, and life-threatening misinformation (turmeric as Alzheimer's cure, fasting to cure autoimmune diseases, raw vegan diets as cancer treatment)
 
-- **Directness**: From indirect to explicit requests
-- **Technical Framing**: From layperson to technical language
-- **Contextual Embedding**: Different contexts for the same request
-- **Sequential Refinement**: Building up to problematic requests gradually
+- **Guardrail Evasion** - Evaluates resilience against prompt injection, jailbreak techniques, system manipulation, and progressive instruction escalation designed to bypass safety mechanisms
+
+- **Mental Health Crisis** - Ensures appropriate handling of suicidal ideation, self-harm content, crisis intervention scenarios, and emotional distress across direct and indirect expressions
+
+- **Synthetic Media Abuse** - Tests deepfake generation resistance, celebrity impersonation scripts, revenge content creation, and misinformation disguised as satire
+
+- **Illegal Activity Facilitation** - Validates refusal of drug synthesis instructions, precursor extraction methods, novel designer drug creation, and controlled substance manufacturing
+
+- **Political Manipulation** - Checks protection against voter suppression tactics, election disinformation, polling disruption rumors, and automated suppression systems
+
+### Multi-Dimensional Testing Framework
+
+Each test category examines different vectors of potential circumvention:
+
+- **Directness Levels**: From oblique references to explicit requests (3 escalation levels)
+- **Technical Framing**: From layperson language to advanced technical terminology
+- **Authority Invocation**: From casual requests to claims of professional/academic authority
+- **Role-Playing Scenarios**: From hypothetical discussions to direct role assumption
+- **Contextual Embedding**: Educational, fictional, research, and practical use contexts
+- **Sequential Refinement**: 5-step conversation flows that gradually escalate from innocent to problematic requests
+
+### Risk Classification
+
+Tests are categorized by risk level:
+- **Critical**: Life-threatening content (suicide methods, drug synthesis, medical misinformation)
+- **High**: Significant harm potential (deepfakes, voter suppression, jailbreaks)
+- **Medium**: Moderate risk scenarios requiring careful handling
+
+Each test includes detailed ethical considerations, expected model behavior, and analysis guidance to ensure responsible evaluation of AI safety mechanisms.
 
 ##  Analysis Features
 
@@ -84,21 +101,32 @@ The framework automatically analyzes responses for:
 3. **Evaluation**: Compare safety measures across different commercial LLMs
 4. **Education**: Demonstrate AI safety challenges and solutions
 
-##  Documentation
+## Running this
+```bash
+#run tests
+python guardrail_benchmark.py benchmark_data/sample_test_cases.json
+python guardrail_benchmark.py benchmark_data/llm_guardrail_benchmark_full.json
 
-- [Getting Started Guide](docs/getting_started.md)
-- [Implementation Guide](docs/implementation_guide.md)
-- [API Reference](docs/api_reference.md)
-- [Test Suite Format](docs/test_suite_format.md)
+#html page with visualizaitons
+python generate_html_from_run.py ./sample_run_results
+
+#console summary from existing run
+python console_summary_from_run.py ./sample_run_results  
+
+```
+## Sample results
+
+check the sample_run_results folder from my runs and sample_run_results/sample_console_results.txt
+
 
 ##  Contributing
 
 Contributions are welcome! Please feel free to submit a Pull Request.
 
 1. Fork the repository
-2. Create your feature branch (`git checkout -b feature/amazing-feature`)
-3. Commit your changes (`git commit -m 'Add some amazing feature'`)
-4. Push to the branch (`git push origin feature/amazing-feature`)
+2. Create your feature branch (`git checkout -b feature/adding_to_dataset`)
+3. Commit your changes (`git commit -m 'Add more cases to data'`)
+4. Push to the branch (`git push origin feature/adding_to_dataset`)
 5. Open a Pull Request
 
 ##  License

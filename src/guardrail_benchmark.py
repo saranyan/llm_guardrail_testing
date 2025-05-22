@@ -983,7 +983,7 @@ def main():
                 logger.error(f"Error generating HTML report: {e}")
                 print(f"ERROR generating report: {e}")
         else:
-            print(f"To generate an HTML report, run: python results_visualizer.py --run-dir {run_dir}")
+            print(f"To generate an HTML report, run: python generate_html_from_run.py --run-dir {run_dir}")
         
     except Exception as e:
         logger.exception(f"Error running benchmark: {e}")
