@@ -1,0 +1,280 @@
+
+    <!DOCTYPE html>
+    <html>
+    <head>
+        <title>LLM Guardrail Benchmark Results</title>
+        <style>
+            body {
+                font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+                line-height: 1.6;
+                color: #333;
+                max-width: 1200px;
+                margin: 0 auto;
+                padding: 20px;
+                background-color: #fafafa;
+            }
+            h1, h2, h3 {
+                color: #2c3e50;
+            }
+            h1 {
+                border-bottom: 3px solid #3498db;
+                padding-bottom: 10px;
+            }
+            .summary-box {
+                background-color: #ffffff;
+                border-left: 4px solid #3498db;
+                padding: 20px;
+                margin-bottom: 30px;
+                border-radius: 8px;
+                box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            }
+            .findings-box {
+                background-color: #ffffff;
+                border-left: 4px solid #27ae60;
+                padding: 20px;
+                margin-bottom: 30px;
+                border-radius: 8px;
+                box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            }
+            table {
+                width: 100%;
+                border-collapse: collapse;
+                margin-bottom: 30px;
+                background-color: #ffffff;
+                border-radius: 8px;
+                overflow: hidden;
+                box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            }
+            th, td {
+                padding: 15px;
+                text-align: left;
+                border-bottom: 1px solid #ecf0f1;
+            }
+            th {
+                background-color: #34495e;
+                color: white;
+                font-weight: 600;
+            }
+            tr:hover {
+                background-color: #f8f9fa;
+            }
+            .visualization-group {
+                display: flex;
+                flex-wrap: wrap;
+                gap: 30px;
+                margin-bottom: 40px;
+            }
+            .visualization-item {
+                flex: 1 1 45%;
+                min-width: 500px;
+                background-color: #ffffff;
+                box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+                padding: 20px;
+                border-radius: 12px;
+            }
+            .viz-image {
+                width: 100%;
+                height: auto;
+                border-radius: 8px;
+            }
+            footer {
+                margin-top: 60px;
+                padding-top: 30px;
+                border-top: 2px solid #ecf0f1;
+                font-size: 0.9em;
+                color: #7f8c8d;
+                text-align: center;
+            }
+            .metric {
+                display: inline-block;
+                margin: 0 15px;
+                padding: 10px;
+                background-color: #ecf0f1;
+                border-radius: 6px;
+                font-weight: 600;
+            }
+        </style>
+    </head>
+    <body>
+        <h1>🛡️ LLM Guardrail Benchmark Results</h1>
+        
+        <div class="summary-box">
+            <h2>📊 Executive Summary</h2>
+            <p><strong>Generated:</strong> 2025-05-21 23:15</p>
+            <div>
+                <span class="metric">Models: 2</span>
+                <span class="metric">Tests: 24</span>
+                <span class="metric">Categories: 6</span>
+                <span class="metric">Overall Refusal Rate: 28.5%</span>
+            </div>
+            <p><strong>Models Tested:</strong> claude, openai</p>
+            <p><strong>Categories:</strong> Harmful Misinformation, Guardrail Evasion, Mental Health Risk, Synthetic Media Abuse, Illegal Activity Facilitation, Political Manipulation</p>
+        </div>
+        
+        <div class="findings-box">
+            <h2>🔍 Key Findings</h2>
+            <ul>
+                <li>Largest model difference: claude has 23.1% higher refusal rate than openai</li>
+<li>Highest refusal rate category: Illegal Activity Facilitation (57.5%)</li>
+
+            </ul>
+        </div>
+        
+        <h2>📈 Model Performance Comparison</h2>
+        <table>
+            <tr>
+                <th>Model</th>
+                <th>Refusal Rate</th>
+                <th>Complete Refusals</th>
+                <th>Refusals with Alternatives</th>
+                <th>Cautious Compliance</th>
+                <th>Full Compliance</th>
+            </tr>
+            
+        <tr>
+            <td>claude</td>
+            <td>40.0%</td>
+            <td>98</td>
+            <td>46</td>
+            <td>19</td>
+            <td>197</td>
+        </tr>
+        
+        <tr>
+            <td>openai</td>
+            <td>16.9%</td>
+            <td>59</td>
+            <td>2</td>
+            <td>24</td>
+            <td>275</td>
+        </tr>
+        
+        </table>
+        
+        
+        <h2>📂 Category Analysis</h2>
+        <table>
+            <tr>
+                <th>Category</th>
+                <th>Refusal Rate</th>
+                <th>Model Breakdown</th>
+            </tr>
+            
+            <tr>
+                <td>Harmful Misinformation</td>
+                <td>7.5%</td>
+                <td>claude: 13.3%, openai: 1.7%</td>
+            </tr>
+            
+            <tr>
+                <td>Guardrail Evasion</td>
+                <td>40.0%</td>
+                <td>claude: 46.7%, openai: 33.3%</td>
+            </tr>
+            
+            <tr>
+                <td>Mental Health Risk</td>
+                <td>7.5%</td>
+                <td>claude: 15.0%, openai: 0.0%</td>
+            </tr>
+            
+            <tr>
+                <td>Synthetic Media Abuse</td>
+                <td>19.2%</td>
+                <td>claude: 31.7%, openai: 6.7%</td>
+            </tr>
+            
+            <tr>
+                <td>Illegal Activity Facilitation</td>
+                <td>57.5%</td>
+                <td>claude: 78.3%, openai: 36.7%</td>
+            </tr>
+            
+            <tr>
+                <td>Political Manipulation</td>
+                <td>39.2%</td>
+                <td>claude: 55.0%, openai: 23.3%</td>
+            </tr>
+            
+        </table>
+        
+        
+        
+        <h2>Model Comparison</h2>
+        <div class="visualization-group">
+            <div class="visualization-item">
+                <h3>Response Categories by Model</h3>
+                <img src="visualizations/model_response_categories.png" alt="Response Categories" class="viz-image">
+            </div>
+        </div>
+        
+        <h2>Category Analysis</h2>
+        <div class="visualization-group">
+            <div class="visualization-item">
+                <h3>Refusal Rates by Category</h3>
+                <img src="visualizations/category_refusal_rates.png" alt="Category Refusal Rates" class="viz-image">
+            </div>
+        </div>
+        
+        <h2>Risk Level Analysis</h2>
+        <div class="visualization-group">
+            <div class="visualization-item">
+                <h3>Refusal Rates by Risk Level</h3>
+                <img src="visualizations/risk_level_refusal_rates.png" alt="Risk Level Refusal Rates" class="viz-image">
+            </div>
+        </div>
+        
+        <h2>Variation Dimension Analysis</h2>
+        <div class="visualization-group">
+        
+            <div class="visualization-item">
+                <h3>Contextual_Embedding Dimension Analysis</h3>
+                <img src="visualizations/contextual_embedding_refusal_progression.png" alt="contextual_embedding Analysis" class="viz-image">
+            </div>
+            
+            <div class="visualization-item">
+                <h3>Urgency_Levels Dimension Analysis</h3>
+                <img src="visualizations/urgency_levels_refusal_progression.png" alt="urgency_levels Analysis" class="viz-image">
+            </div>
+            
+            <div class="visualization-item">
+                <h3>Role_Playing Dimension Analysis</h3>
+                <img src="visualizations/role_playing_refusal_progression.png" alt="role_playing Analysis" class="viz-image">
+            </div>
+            
+            <div class="visualization-item">
+                <h3>Technique_Variation Dimension Analysis</h3>
+                <img src="visualizations/technique_variation_refusal_progression.png" alt="technique_variation Analysis" class="viz-image">
+            </div>
+            
+            <div class="visualization-item">
+                <h3>Technical_Framing Dimension Analysis</h3>
+                <img src="visualizations/technical_framing_refusal_progression.png" alt="technical_framing Analysis" class="viz-image">
+            </div>
+            
+            <div class="visualization-item">
+                <h3>Authority_Invocation Dimension Analysis</h3>
+                <img src="visualizations/authority_invocation_refusal_progression.png" alt="authority_invocation Analysis" class="viz-image">
+            </div>
+            
+            <div class="visualization-item">
+                <h3>Directness Dimension Analysis</h3>
+                <img src="visualizations/directness_refusal_progression.png" alt="directness Analysis" class="viz-image">
+            </div>
+            </div>
+        <h2>Sequential Refinement Analysis</h2>
+        <div class="visualization-group">
+            <div class="visualization-item">
+                <h3>Refusal Rate Progression in Sequential Tests</h3>
+                <img src="visualizations/sequential_refusal_progression.png" alt="Sequential Progression" class="viz-image">
+            </div>
+        </div>
+        
+        
+        <footer>
+            <p>Generated by LLM Guardrail Benchmark Framework</p>
+            <p>🕒 2025-05-21 23:15:38</p>
+        </footer>
+    </body>
+    </html>
+    

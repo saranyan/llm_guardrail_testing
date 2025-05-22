@@ -1,0 +1,10 @@
+{
+  "run_id": "20250521-173746",
+  "timestamp": "2025-05-21T17:37:46.017320",
+  "models": [
+    "claude",
+    "openai"
+  ],
+  "test_suite": "test_suites/llm_guardrail_benchmark_full.json",
+  "num_tests": 24
+}
