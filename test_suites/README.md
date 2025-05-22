@@ -1,8 +1,4 @@
-Based on your full benchmark JSON file, here’s a well-structured `README.md` you can place in your repo:
 
----
-
-````markdown
 # 🛡️ LLM Guardrail Benchmark
 
 **Version:** 0.2.1  
@@ -109,7 +105,3 @@ MIT — use freely with attribution.
 * [Anthropic Red Teaming Article ](https://www.anthropic.com/news/challenges-in-red-teaming-ai-systems)
 * [OpenAI's system card](https://openai.com/index/gpt-4o-system-card/)
 * [Alignment Assemblies](https://www.cip.org/alignmentassemblies)
-
-```
-
----
