@@ -15,8 +15,8 @@ This framework enables researchers and developers to:
 
 ```bash
 # Clone the repository
-git clone https://github.com/saranyan/llm-guardrail-testing.git
-cd llm-guardrail-testing
+git clone https://github.com/saranyan/llm_guardrail_testing.git
+cd llm_guardrail_testing
 
 # Install dependencies
 pip install -r requirements.txt
@@ -36,12 +36,10 @@ python -m scripts.generate_report --input-dir results/processed --output results
 
 ```
 llm-guardrail-testing/
-├── llm_tester/           # Main package
-│   ├── core.py           # Core tester functionality
-│   ├── analyzers/        # Response analysis modules
-│   ├── clients/          # API client wrappers
-│   ├── utils/            # Utility functions
-│   └── visualizers/      # Results visualization
+├── src/           # Code to run the tests
+│   ├── guardrail_benchmark.py           # Core functionality
+│   ├── generate_html_from_run.py        # generates HTML file from run for viz
+|   ├── console_summary_from_run.py      # generates console report from run
 │
 ├── scripts/              # Utility scripts
 ├── test_suites/          # Test definitions
