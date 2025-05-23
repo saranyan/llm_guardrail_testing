@@ -1,6 +1,6 @@
 # LLM Guardrail Testing Framework
 
-A systematic framework for testing how different language models respond to variations in prompt phrasing and evaluating the effectiveness of their safety guardrails.
+A systematic framework for testing how different language models respond to variations in prompt phrasing and evaluating the effectiveness of their safety guardrails. Check * [Details here ](https://www.saranyan.com/research/safety/llm-guardrail-benchmark)
 
 ## Project Overview
 
