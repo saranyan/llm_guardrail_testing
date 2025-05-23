@@ -25,11 +25,8 @@ pip install -r requirements.txt
 echo "ANTHROPIC_API_KEY=your_anthropic_api_key" > .env
 echo "OPENAI_API_KEY=your_openai_api_key" >> .env
 
-# Run a test suite
-python -m scripts.run_all_tests --test-suite test_suites/information_boundaries.json
-
-# Generate a report
-python -m scripts.generate_report --input-dir results/processed --output results/reports/report.html
+# Run bechnmark on sample_data
+python guardrail_benchmark.py --test-suite ../benchmark_data/single_test_case.json 
 ```
 
 ## 📁 Project Structure
